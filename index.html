@@ -405,6 +405,193 @@
                 transition-duration: 0.01ms !important;
             }
         }
+
+        /* ===== INDUSTRIES SECTION CARDS STYLES ===== */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+
+        @media (min-width: 640px) {
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) {
+            .industries-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .industries-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .industries-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .industry-card {
+            background: white;
+            border: 1px solid #dce7f7;
+            padding: 30px;
+            border-radius: 10px;
+            position: relative;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        .industry-card:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .industry-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        /* Icon Background Colors */
+        .industry-icon.icon-yellow {
+            background: #ffefb5;
+        }
+
+        .industry-icon.icon-green {
+            background: #d6f7d6;
+        }
+
+        .industry-icon.icon-pink {
+            background: #ffe1e1;
+        }
+
+        .industry-icon.icon-blue {
+            background: #e2efff;
+        }
+
+        .industry-icon.icon-mint {
+            background: #dff7e8;
+        }
+
+        .industry-icon.icon-red {
+            background: #ffdada;
+        }
+
+        .industry-icon.icon-light-yellow {
+            background: #fff4cc;
+        }
+
+        .industry-card-title {
+            font-size: 18px;
+            color: #222;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* Arrow icon */
+        .industry-arrow {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 18px;
+            color: #3a8df0;
+        }
+
+        /* ===== SERVICES SECTION STYLES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 50px 80px;
+            }
+        }
+
+        /* SERVICE BOX BASE STYLE */
+        .service-box {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* ICON LEFT / RIGHT HANDLING */
+        .service-icon-left {
+            flex-direction: row;
+            /* icon first */
+            text-align: left;
+        }
+
+        .service-icon-right {
+            flex-direction: row-reverse;
+            /* icon last */
+            text-align: right;
+        }
+
+        .service-icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        /* Service Icon Colors */
+        .service-icon-box.icon-blue {
+            background: #3498db;
+        }
+
+        .service-icon-box.icon-green {
+            background: #2ecc71;
+        }
+
+        .service-icon-box.icon-orange {
+            background: #e67e22;
+        }
+
+        .service-icon-box.icon-purple {
+            background: #9b59b6;
+        }
+
+        .service-icon-box.icon-teal {
+            background: #1abc9c;
+        }
+
+        .service-icon-box.icon-yellow {
+            background: #f1c40f;
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .service-text {
+            font-size: 14px;
+            color: #777;
+            line-height: 1.5;
+            max-width: 330px;
+        }
     </style>
 </head>
 
@@ -662,465 +849,138 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-chart-line text-white text-3xl"></i>
+            <div class="services-grid">
+                <!-- LEFT COLUMN (ICON RIGHT) -->
+                <div class="service-box service-icon-right">
+                    <div class="service-icon-box icon-blue">⚙️</div>
+                    <div>
+                        <div class="service-title">Enterprise CRM Development</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Enterprise CRM Development</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Custom CRM platforms with lead management, B2B meetings, analytics dashboards, and collaboration
-                        features.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $4,000</span>
-                        <span class="text-gray-600">5–6 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Elementor Pro Design
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            SEO Optimization
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Responsive Design
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-users-cog text-white text-3xl"></i>
+                <div class="service-box service-icon-left">
+                    <div class="service-icon-box icon-green">🏢</div>
+                    <div>
+                        <div class="service-title">Enterprise EMS</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Enterprise EMS</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Attendance tracking, HR management, performance analytics, and multi-level admin controls.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $2,500</span>
-                        <span class="text-gray-600">3–4 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Attendance System
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            HR Management
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Performance Analytics
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-laptop-code text-white text-3xl"></i>
+                <div class="service-box service-icon-right">
+                    <div class="service-icon-box icon-orange">💻</div>
+                    <div>
+                        <div class="service-title">Custom Web Applications</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Custom Web Applications</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        High-performance platforms built with React.js, Node.js, PostgreSQL, and real-time features.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $2,000</span>
-                        <span class="text-gray-600">2–3 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            React.js Frontend
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Node.js Backend
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Real-time Features
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-robot text-white text-3xl"></i>
+                <div class="service-box service-icon-left">
+                    <div class="service-icon-box icon-purple">🤖</div>
+                    <div>
+                        <div class="service-title">AI Integration & Automation</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">AI Integration & Automation</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        AI chatbots, OCR systems, intelligent workflows, and automation using Python & OpenRouter.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $1,500</span>
-                        <span class="text-gray-600">2–3 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            AI Chatbots
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            OCR Systems
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Workflow Automation
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-mobile-alt text-white text-3xl"></i>
+                <div class="service-box service-icon-right">
+                    <div class="service-icon-box icon-teal">📱</div>
+                    <div>
+                        <div class="service-title">Mobile App Development</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Mobile App Development</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Cross-platform mobile apps using Flutter & React Native with modern mobile-first design.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $3,000</span>
-                        <span class="text-gray-600">4–6 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Flutter / React Native
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            iOS & Android
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Mobile-First Design
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-xl p-8 card-hover border border-gray-100">
-                    <div class="bg-blue-600 w-20 h-20 rounded-2xl flex items-center justify-center mb-6 shadow-lg"
-                        style="background-color: #4169E1;">
-                        <i class="fab fa-wordpress text-white text-3xl"></i>
+                <div class="service-box service-icon-left">
+                    <div class="service-icon-box icon-yellow">🌐</div>
+                    <div>
+                        <div class="service-title">WordPress Websites</div>
+                        <div class="service-text">Lorem ipsum dummy text of printing and typesetting industry.</div>
                     </div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-4">WordPress Websites</h3>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Professional corporate websites with Elementor Pro, SEO optimization, and modern UI/UX.
-                    </p>
-                    <div class="flex justify-between text-sm mb-6">
-                        <span class="font-bold text-blue-600">Starting at: $800</span>
-                        <span class="text-gray-600">1–2 weeks</span>
-                    </div>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Elementor Pro Design
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            SEO Optimization
-                        </li>
-                        <li class="flex items-center text-gray-700">
-                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                            Responsive Design
-                        </li>
-                    </ul>
-                    <a href="#contact"
-                        class="text-blue-600 font-bold hover:text-blue-700 inline-flex items-center group">
-                        Learn More
-                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-2 transition"></i>
-                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-
     <!-- Industries Section -->
-    <section class="py-24 bg-white">
+    <section class="py-20 sm:py-24 lg:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
+            <!-- Section Header -->
+            <div class="text-center mb-16 lg:mb-20">
+                <div
+                    class="inline-flex items-center bg-blue-100 text-blue-600 px-6 py-2.5 rounded-full font-bold mb-6 shadow-sm">
+                    <i class="fas fa-industry mr-2 text-sm"></i>
                     INDUSTRIES WE SERVE
                 </div>
-                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Empowering Diverse Sectors</h2>
-                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Delivering tailored digital solutions across multiple industries with proven expertise
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                    Empowering <span class="text-blue-600">Diverse Sectors</span>
+                </h2>
+                <p class="text-gray-600 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+                    Delivering tailored digital solutions across multiple industries with proven expertise and
+                    cutting-edge technology
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Real Estate -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Real Estate</h3>
-                    <p class="text-gray-600 text-sm">Property management and listing platforms</p>
+            <!-- Industries Grid -->
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-yellow">🏠</div>
+                    <div class="industry-card-title">Real estate</div>
                 </div>
 
-                <!-- Engineering & Construction -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-hard-hat text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Engineering & Construction</h3>
-                    <p class="text-gray-600 text-sm">Project tracking and resource management</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-green">🛠️</div>
+                    <div class="industry-card-title">Engineering and construction</div>
                 </div>
 
-                <!-- Retail -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Retail</h3>
-                    <p class="text-gray-600 text-sm">E-commerce and inventory solutions</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-pink">🛒</div>
+                    <div class="industry-card-title">Retail</div>
                 </div>
 
-                <!-- Manufacturing -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-industry text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Manufacturing</h3>
-                    <p class="text-gray-600 text-sm">Production monitoring and quality control</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-blue">🏭</div>
+                    <div class="industry-card-title">Manufacturing</div>
                 </div>
 
-                <!-- Logistics & Transportation -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-truck text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Logistics & Transportation</h3>
-                    <p class="text-gray-600 text-sm">Fleet management and route optimization</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-mint">🚚</div>
+                    <div class="industry-card-title">Logistics and Transportation</div>
                 </div>
 
-                <!-- Oil & Gas -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-oil-can text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Oil & Gas</h3>
-                    <p class="text-gray-600 text-sm">Asset monitoring and compliance systems</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-red">🛢️</div>
+                    <div class="industry-card-title">Oil and Gas</div>
                 </div>
 
-                <!-- Energy & Utilities -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Energy & Utilities</h3>
-                    <p class="text-gray-600 text-sm">Smart grid and consumption analytics</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-yellow">♻️</div>
+                    <div class="industry-card-title">Energy and utilities</div>
                 </div>
 
-                <!-- Professional Services -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-briefcase text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Professional Services</h3>
-                    <p class="text-gray-600 text-sm">Client portals and project management</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-blue">💼</div>
+                    <div class="industry-card-title">Professional services</div>
                 </div>
 
-                <!-- Telecoms -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-signal text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Telecoms</h3>
-                    <p class="text-gray-600 text-sm">Network management and billing systems</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-green">📡</div>
+                    <div class="industry-card-title">Telecoms</div>
                 </div>
 
-                <!-- Travel & Hospitality -->
-                <div
-                    class="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Travel & Hospitality</h3>
-                    <p class="text-gray-600 text-sm">Booking platforms and guest management</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <p class="text-gray-600 text-lg mb-6">Don't see your industry? We adapt our solutions to any sector.</p>
-                <a href="#contact"
-                    class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:shadow-2xl transform hover:scale-105 transition text-lg"
-                    style="background-color: #4169E1;">
-                    <i class="fas fa-comments mr-2"></i>Discuss Your Industry Needs
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Industries Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="text-center mb-20">
-                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-bold mb-4">
-                    INDUSTRIES WE SERVE
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-black text-gray-900 mb-6">Empowering Diverse Sectors</h2>
-                <p class="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-                    Delivering tailored digital solutions across multiple industries with proven expertise
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                <!-- Real Estate -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-building text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Real Estate</h3>
-                    <p class="text-gray-600 text-sm">Property management and listing platforms</p>
-                </div>
-
-                <!-- Engineering & Construction -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-hard-hat text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Engineering & Construction</h3>
-                    <p class="text-gray-600 text-sm">Project tracking and resource management</p>
-                </div>
-
-                <!-- Retail -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-shopping-cart text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Retail</h3>
-                    <p class="text-gray-600 text-sm">E-commerce and inventory solutions</p>
-                </div>
-
-                <!-- Manufacturing -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-industry text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Manufacturing</h3>
-                    <p class="text-gray-600 text-sm">Production monitoring and quality control</p>
-                </div>
-
-                <!-- Logistics & Transportation -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-truck text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Logistics & Transportation</h3>
-                    <p class="text-gray-600 text-sm">Fleet management and route optimization</p>
-                </div>
-
-                <!-- Oil & Gas -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-oil-can text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Oil & Gas</h3>
-                    <p class="text-gray-600 text-sm">Asset monitoring and compliance systems</p>
-                </div>
-
-                <!-- Energy & Utilities -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-bolt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Energy & Utilities</h3>
-                    <p class="text-gray-600 text-sm">Smart grid and consumption analytics</p>
-                </div>
-
-                <!-- Professional Services -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-briefcase text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Professional Services</h3>
-                    <p class="text-gray-600 text-sm">Client portals and project management</p>
-                </div>
-
-                <!-- Telecoms -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-signal text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Telecoms</h3>
-                    <p class="text-gray-600 text-sm">Network management and billing systems</p>
-                </div>
-
-                <!-- Travel & Hospitality -->
-                <div class="bg-blue-50 rounded-2xl p-6 card-hover border border-gray-100 group">
-                    <div class="bg-blue-600 w-16 h-16 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-                        style="background-color: #4169E1;">
-                        <i class="fas fa-plane text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Travel & Hospitality</h3>
-                    <p class="text-gray-600 text-sm">Booking platforms and guest management</p>
+                <div class="industry-card">
+                    <div class="industry-arrow">↗</div>
+                    <div class="industry-icon icon-light-yellow">🧳</div>
+                    <div class="industry-card-title">Travel and hospitality</div>
                 </div>
             </div>
 
