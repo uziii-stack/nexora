@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexora Software House</title>
+    <title>Nexora - International Software House</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -124,27 +124,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .shimmer {
-            position: relative;
-            overflow: hidden;
-        }
 
-        .shimmer::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            100% {
-                left: 100%;
-            }
-        }
 
         .badge-float {
             animation: badge-float 3s ease-in-out infinite;
@@ -162,239 +142,261 @@
             }
         }
 
-        /* ===== RESPONSIVE DESIGN ENHANCEMENTS ===== */
+        /* ===== RESPONSIVE DESIGN ENHANCEMENTS (COMPREHENSIVE) ===== */
 
-        /* Mobile-first responsive containers */
+        /* 1. Global Container & Layout Bases */
         .container {
             width: 100%;
             margin-left: auto;
             margin-right: auto;
+            padding-left: 1rem;
+            /* px-4 default */
+            padding-right: 1rem;
         }
 
-        /* Responsive text utilities */
-        @media (max-width: 640px) {
+        /* 2. Device-Specific Breakpoints */
 
-            /* Mobile: 320px - 640px */
+        /* --- Ultra Small Devices (Fold phones, older iPhones) < 375px --- */
+        @media (max-width: 374px) {
+            .container {
+                padding-left: 0.75rem !important;
+                /* px-3 */
+                padding-right: 0.75rem !important;
+            }
+
+            h1 {
+                font-size: 1.75rem !important;
+                /* Smaller H1 */
+                word-wrap: break-word;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
             .hero-gradient h1 {
-                font-size: 2.5rem !important;
-                line-height: 1.2 !important;
+                font-size: 2rem !important;
             }
 
-            .trust-badge {
-                font-size: 0.75rem;
-                padding: 0.375rem 0.75rem;
+            /* Force single column for stats on very small screens to avoid overlap */
+            .grid-cols-2 {
+                grid-template-columns: 1fr !important;
             }
 
-            /* Hide secondary elements on small mobile */
-            .hidden-mobile {
-                display: none !important;
-            }
-
-            /* Stack elements vertically */
-            .stack-mobile {
+            /* Adjust Service Box for tight spaces */
+            .service-box {
                 flex-direction: column !important;
+                align-items: flex-start !important;
+                text-align: left !important;
             }
 
-            /* Reduce padding on mobile */
-            .mobile-px-2 {
-                padding-left: 0.5rem !important;
-                padding-right: 0.5rem !important;
-            }
-
-            /* Smaller buttons on mobile */
-            button,
-            .btn {
-                padding: 0.75rem 1.5rem !important;
-                font-size: 0.875rem !important;
+            .service-box img {
+                margin: 0 0 10px 0 !important;
+                width: 50px;
+                /* Smaller icons */
+                height: 50px;
             }
         }
 
-        @media (min-width: 641px) and (max-width: 768px) {
-
-            /* Tablet: 641px - 768px */
+        /* --- Mobile Devices (Standard) 375px - 639px --- */
+        @media (min-width: 375px) and (max-width: 639px) {
             .hero-gradient h1 {
-                font-size: 3.5rem !important;
-                line-height: 1.2 !important;
+                font-size: 2.25rem !important;
+                line-height: 1.25 !important;
             }
-        }
 
-        @media (min-width: 769px) and (max-width: 1024px) {
-
-            /* Laptop: 769px - 1024px */
-            .hero-gradient h1 {
-                font-size: 4rem !important;
-            }
-        }
-
-        @media (min-width: 1025px) and (max-width: 1440px) {
-
-            /* Desktop: 1025px - 1440px */
-            .container {
-                max-width: 1280px;
-            }
-        }
-
-        @media (min-width: 1441px) {
-
-            /* Large Desktop: 1441px+ */
-            .container {
-                max-width: 1400px;
-            }
-        }
-
-        /* Responsive grid improvements */
-        @media (max-width: 640px) {
-
-            /* Force single column on mobile for better readability */
-            .grid-cols-2,
             .grid-cols-3,
-            .grid-cols-4,
-            .md\\:grid-cols-2,
-            .md\\:grid-cols-3,
-            .lg\\:grid-cols-3 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            .grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                /* Allow 2 cols for simple grids */
             }
 
-            /* 2 columns for stats */
-            .stats-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-        }
-
-        @media (min-width: 641px) and (max-width: 1024px) {
-
-            /* Tablet: optimize for 2-column layouts */
-            .lg\\:grid-cols-3 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-
-            .lg\\:grid-cols-4 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            /* Keep larger grids single column */
+            .md\:grid-cols-2,
+            .lg\:grid-cols-3,
+            .lg\:grid-cols-4 {
+                grid-template-columns: 1fr !important;
             }
         }
 
-        /* Responsive spacing */
+        /* --- Global Mobile (covering all phones) < 640px --- */
         @media (max-width: 640px) {
+
+            /* General Section Comfort */
             section {
                 padding-top: 3rem !important;
                 padding-bottom: 3rem !important;
             }
 
-            .py-24 {
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
+            /* Hide decorative / non-essential elements */
+            .floating,
+            .badge-float,
+            .top-bar-hide-mobile {
+                display: none !important;
             }
 
-            .py-12 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
+            /* Adjust Fonts */
+            .text-5xl,
+            .text-6xl {
+                font-size: 2.5rem !important;
+                /* Standardize large text */
             }
 
-            .gap-8 {
-                gap: 1rem !important;
+            /* Navigation Simplification */
+            nav .h-20 {
+                height: 4rem !important;
             }
 
-            .gap-12 {
-                gap: 1.5rem !important;
-            }
-        }
-
-        /* Responsive images */
-        @media (max-width: 1024px) {
-            .floating {
-                animation: none;
-                /* Disable animation on mobile/tablet for performance */
-            }
-        }
-
-        /* Navigation responsive improvements */
-        @media (max-width: 1024px) {
             nav .text-2xl {
                 font-size: 1.25rem !important;
             }
 
-            nav .text-xs {
-                font-size: 0.625rem !important;
-            }
-
-            nav .h-20 {
-                height: 4rem !important;
-            }
-        }
-
-        /* Top bar responsive */
-        @media (max-width: 640px) {
-            .top-bar-hide-mobile {
-                display: none !important;
-            }
-        }
-
-        /* Footer responsive */
-        @media (max-width: 640px) {
+            /* Footer Stacking */
             footer .grid {
-                gap: 2rem !important;
+                gap: 2.5rem !important;
             }
 
-            footer h4 {
-                font-size: 1rem !important;
-            }
-        }
-
-        /* Form responsive */
-        @media (max-width: 640px) {
-
+            /* Form Input Zoom Fix (iOS) */
             input,
             select,
             textarea {
                 font-size: 16px !important;
-                /* Prevents zoom on iOS */
             }
         }
 
-        /* Card responsive improvements */
-        @media (max-width: 640px) {
-            .card-hover {
-                padding: 1.5rem !important;
+        /* --- Tablet Portrait (iPad Mini, standard tablets vertical) 641px - 768px --- */
+        @media (min-width: 641px) and (max-width: 768px) {
+            .container {
+                max-width: 640px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
             }
 
-            .card-hover h3 {
-                font-size: 1.25rem !important;
-            }
-
-            .testimonial-card {
-                padding: 1.5rem !important;
-            }
-        }
-
-        /* Project card responsive */
-        @media (max-width: 640px) {
-            .project-card img {
-                height: 16rem !important;
-            }
-
-            .project-overlay h3 {
-                font-size: 1.5rem !important;
-            }
-        }
-
-        /* Stats responsive */
-        @media (max-width: 640px) {
-
-            .text-5xl,
-            .text-6xl {
-                font-size: 2.5rem !important;
-            }
-        }
-
-        @media (min-width: 641px) and (max-width: 1024px) {
-
-            .text-5xl,
-            .text-6xl {
+            .hero-gradient h1 {
                 font-size: 3rem !important;
             }
+
+            /* Ensure 2 columns for most content grids */
+            .lg\:grid-cols-3,
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+
+            /* Stats Grid: 2x2 */
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
         }
 
-        /* Ensure smooth transitions */
+        /* --- Tablet Landscape / Small Laptops 769px - 1024px --- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .hero-gradient h1 {
+                font-size: 3.5rem !important;
+            }
+
+            /* Optimization for 3-column layouts */
+            .lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 1rem !important;
+            }
+
+            /* Keep 4-column layouts as 2x2 for readability */
+            .lg\:grid-cols-4 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+
+        /* --- Desktop Standard 1025px - 1280px --- */
+        @media (min-width: 1025px) and (max-width: 1280px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+
+        /* --- Large Screens 1281px - 1535px --- */
+        @media (min-width: 1281px) and (max-width: 1535px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+
+        /* --- Extra Large Screens / 4K 1536px+ --- */
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1440px;
+                /* Cap width for readability */
+            }
+
+            .hero-gradient {
+                background-size: cover;
+                /* Ensure BG looks good */
+            }
+        }
+
+        /* 3. Component Specific Responsive Tweaks */
+
+        /* Project Cards */
+        @media (max-width: 768px) {
+            .project-card img {
+                height: 200px !important;
+                /* Consistent height on mobile/tab */
+            }
+
+            /* Ensure overlay text is readable */
+            .project-overlay h3 {
+                font-size: 1.25rem !important;
+            }
+        }
+
+
+
+        /* Stats Section Specifics */
+        @media (max-width: 480px) {
+            .stats-grid .text-5xl {
+                font-size: 2rem !important;
+            }
+        }
+
+        /* 
+           Fix for Stats Section Overlap 
+           Only apply negative margin on screens larger than mobile
+           On mobile, add some spacing.
+        */
+        .stats-custom-margin {
+            margin-top: 0;
+            padding-top: 4rem;
+            /* separation from button */
+        }
+
+        @media (min-width: 1024px) {
+            .stats-custom-margin {
+                margin-top: -4rem;
+                /* -mt-16 */
+                padding-top: 3rem;
+            }
+        }
+
+        /* Testimonials Responsive - ensure full width on mobile */
+        @media (max-width: 640px) {
+            .testimonial-card {
+                padding: 1.5rem !important;
+                /* Smaller padding */
+                margin-bottom: 1rem;
+            }
+
+            /* Stack stars for reliability */
+            .testimonial-card .flex {
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Reduced Motion Preference */
         @media (prefers-reduced-motion: reduce) {
 
             *,
@@ -403,6 +405,7 @@
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
 
@@ -532,13 +535,11 @@
         /* ICON LEFT / RIGHT HANDLING */
         .service-icon-left {
             flex-direction: row;
-            /* icon first */
             text-align: left;
         }
 
         .service-icon-right {
             flex-direction: row-reverse;
-            /* icon last */
             text-align: right;
         }
 
@@ -596,7 +597,6 @@
         :root {
             --page-bg: #ffffff;
             --muted-card: #f1f6f9;
-            /* light card background */
             --card-border: rgba(18, 30, 45, 0.05);
             --text-dark: #071227;
             --muted-text: #4b5563;
@@ -604,6 +604,40 @@
             --blue-1: #042a56;
             --blue-2: #0e4b88;
         }
+
+        /* =====================================
+   MOBILE FIX → All items left-aligned
+   ===================================== */
+        @media (max-width: 767px) {
+
+            /* Standard Mobile: Icon Left, Text Right */
+            .service-box {
+                flex-direction: row !important;
+                text-align: left !important;
+                align-items: flex-start !important;
+            }
+
+            .service-box img {
+                margin-right: 15px !important;
+                margin-left: 0 !important;
+                margin-bottom: 0 !important;
+                /* Reset any bottom margin */
+            }
+        }
+
+        /* Ultra Small Override (< 375px) */
+        @media (max-width: 374px) {
+            .service-box {
+                flex-direction: column !important;
+                text-align: left !important;
+            }
+
+            .service-box img {
+                margin-right: 0 !important;
+                margin-bottom: 15px !important;
+            }
+        }
+
 
 
 
@@ -879,6 +913,8 @@
         @media (max-width: 640px) {
             .wcu-container-wrapper {
                 padding: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
             }
 
             .wcu-pill {
@@ -888,53 +924,65 @@
 
             .wcu-hero h1 {
                 font-size: 28px !important;
-                line-height: 1.2 !important;
+                line-height: 1.25 !important;
             }
 
+            /* Switch to Flexbox for better mobile stacking control */
             .wcu-grid {
-                grid-template-columns: 1fr !important;
-                gap: 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 24px !important;
+                grid-template-columns: none !important;
             }
 
             .wcu-left-col {
-                grid-template-columns: 1fr !important;
-                grid-auto-rows: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
                 gap: 16px !important;
+                grid-template-columns: none !important;
+                grid-auto-rows: auto !important;
             }
 
+            /* Fix cards to be full width and stacked content */
             .wcu-feature-card,
             .wcu-feature-large {
-                padding: 18px !important;
+                width: 100% !important;
+                padding: 24px !important;
                 flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 16px !important;
+                /* Reset grid properties just in case */
+                grid-column: auto !important;
             }
 
-            .wcu-feature-card h3 {
-                font-size: 16px !important;
-            }
-
-            .wcu-feature-card p {
-                font-size: 13px !important;
-            }
-
+            .wcu-feature-card h3,
             .wcu-feature-large h3 {
                 font-size: 18px !important;
+                margin-top: 4px !important;
             }
 
+            .wcu-feature-card p,
             .wcu-feature-large p {
-                font-size: 13px !important;
+                font-size: 14px !important;
+                color: #556 !important;
+                /* Slightly darker for readability */
             }
 
             .wcu-promo {
-                padding: 20px !important;
+                padding: 24px !important;
                 min-height: auto !important;
+                width: 100% !important;
+                order: 10;
+                /* Force to bottom */
             }
 
             .wcu-promo h3 {
-                font-size: 18px !important;
+                font-size: 20px !important;
             }
 
             .wcu-promo p {
-                font-size: 13px !important;
+                font-size: 14px !important;
+                margin-bottom: 24px !important;
             }
 
             .wcu-cta {
@@ -947,43 +995,88 @@
             .wcu-feature-large:hover,
             .wcu-promo:hover {
                 transform: none !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
             }
         }
 
-        /* Tablet: 641px - 768px */
-        @media (min-width: 641px) and (max-width: 768px) {
-            .wcu-hero h1 {
-                font-size: 32px !important;
+        /* Tablet & Small Laptop: 641px - 1024px */
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .wcu-container-wrapper {
+                width: 100% !important;
+                padding: 0 1rem !important;
             }
 
-            .wcu-grid {
-                grid-template-columns: 1fr !important;
-                gap: 20px !important;
-            }
-
-            .wcu-left-col {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 16px !important;
-            }
-
-            .wcu-promo {
-                order: 2;
-            }
-        }
-
-        /* Tablet Landscape / Small Laptop: 769px - 1024px */
-        @media (min-width: 769px) and (max-width: 1024px) {
             .wcu-hero h1 {
                 font-size: 36px !important;
             }
 
+            /* Stack the main layout: Features on top, Promo on bottom */
             .wcu-grid {
-                grid-template-columns: 1fr 340px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 30px !important;
+            }
+
+            /* Make the features grid 2 columns wide */
+            .wcu-left-col {
+                width: 100% !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                grid-auto-rows: auto !important;
+                /* Allow variable height */
                 gap: 20px !important;
             }
 
-            .wcu-left-col {
-                grid-auto-rows: 140px !important;
+            /* Normal cards */
+            .wcu-feature-card {
+                height: 100% !important;
+                /* Fill cell height */
+                min-height: 160px !important;
+            }
+
+            /* Large card spans both columns */
+            .wcu-feature-large {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
+                flex-direction: row !important;
+                /* Keep icon side-by-side if space allows */
+                align-items: flex-start !important;
+            }
+
+            /* Promo card at the bottom, full width, horizontal layout if possible */
+            .wcu-promo {
+                width: 100% !important;
+                order: 2;
+                min-height: auto !important;
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                padding: 30px !important;
+                gap: 20px !important;
+            }
+
+            /* Adjust promo content for horizontal layout */
+            .wcu-promo>div:first-child {
+                flex: 1;
+            }
+
+            .wcu-promo p {
+                margin-bottom: 0 !important;
+                max-width: 90%;
+            }
+
+            /* On smaller tablets, revert promo to vertical internal layout */
+            @media (max-width: 768px) {
+                .wcu-promo {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                }
+
+                .wcu-promo p {
+                    margin-bottom: 20px !important;
+                    max-width: 100%;
+                }
             }
         }
 
@@ -1095,23 +1188,6 @@
                         precision.
                     </p>
 
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 stats-grid">
-                        <div
-                            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                            <div class="text-blue-400 text-3xl font-bold mb-1">50+</div>
-                            <div class="text-white text-sm font-medium">Projects Done</div>
-                        </div>
-                        <div
-                            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                            <div class="text-blue-400 text-3xl font-bold mb-1">24hrs</div>
-                            <div class="text-white text-sm font-medium">Response Time</div>
-                        </div>
-                        <div
-                            class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                            <div class="text-blue-400 text-3xl font-bold mb-1">40+</div>
-                            <div class="text-white text-sm font-medium">Happy Clients</div>
-                        </div>
-                    </div>
 
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button
@@ -1148,35 +1224,7 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="bg-white py-12 -mt-16 relative z-20">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="bg-blue-600 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10" style="background-color: #001F3F;">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">50+</div>
-                        <div class="text-white font-bold text-lg mb-1">Projects Delivered</div>
-                        <div class="text-blue-100 text-sm">Successfully Completed</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">40+</div>
-                        <div class="text-white font-bold text-lg mb-1">Happy Clients</div>
-                        <div class="text-blue-100 text-sm">Worldwide</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">99%</div>
-                        <div class="text-white font-bold text-lg mb-1">Satisfaction Rate</div>
-                        <div class="text-blue-100 text-sm">Client Reviews</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">3+</div>
-                        <div class="text-white font-bold text-lg mb-1">Years Experience</div>
-                        <div class="text-blue-100 text-sm">Industry Expertise</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Tech Stack Section -->
     <section class="py-12 bg-gray-50">
@@ -1224,7 +1272,7 @@
                 <div class="flex justify-center">
                     <div>
 
-                        <i class="fas fa-brain text-5xl text-purple-600"></i>
+                        <i class="fas fa-code text-5xl text-purple-600"></i>
                     </div>
                 </div>
                 <div class="flex justify-center">
@@ -1254,7 +1302,6 @@
 
                 <!-- LEFT COLUMN (ICON RIGHT) -->
                 <div class="service-box service-icon-right">
-                    <!-- <div class="service-icon-box icon-blue">⚙️</div> -->
                     <img src="./crm.jpg" alt="">
                     <div>
                         <div class="service-title">Enterprise CRM Development</div>
@@ -1269,7 +1316,6 @@
                 </div>
 
                 <div class="service-box service-icon-left">
-                    <!-- <div class="service-icon-box icon-green">🏢</div> -->
                     <img src="./emss.jpg" alt="">
                     <div>
                         <div class="service-title">Enterprise EMS</div>
@@ -1284,7 +1330,6 @@
                 </div>
 
                 <div class="service-box service-icon-right">
-                    <!-- <div class="service-icon-box icon-orange">💻</div> -->
                     <img src="./webapp.jpg" alt="">
                     <div>
                         <div class="service-title">Custom Web Applications</div>
@@ -1299,7 +1344,6 @@
                 </div>
 
                 <div class="service-box service-icon-left">
-                    <!-- <div class="service-icon-box icon-purple">🤖</div> -->
                     <img src="./AI.jpg" alt="">
                     <div>
                         <div class="service-title">AI Integration & Automation</div>
@@ -1314,7 +1358,6 @@
                 </div>
 
                 <div class="service-box service-icon-right">
-                    <!-- <div class="service-icon-box icon-teal">📱</div> -->
                     <img src="./mobileapp.jpg" alt="">
                     <div>
                         <div class="service-title">Mobile App Development</div>
@@ -1329,7 +1372,6 @@
                 </div>
 
                 <div class="service-box service-icon-left">
-                    <!-- <div class="service-icon-box icon-yellow">🌐</div> -->
                     <img src="./wordpress.jpg" alt="">
                     <div>
                         <div class="service-title">WordPress Websites</div>
@@ -1580,6 +1622,37 @@
             </div>
         </div>
     </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12 relative z-20 stats-custom-margin">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="bg-blue-600 rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-10" style="background-color: #001F3F;">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">50+</div>
+                        <div class="text-white font-bold text-lg mb-1">Projects Delivered</div>
+                        <div class="text-blue-100 text-sm">Successfully Completed</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">40+</div>
+                        <div class="text-white font-bold text-lg mb-1">Happy Clients</div>
+                        <div class="text-blue-100 text-sm">Worldwide</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">99%</div>
+                        <div class="text-white font-bold text-lg mb-1">Satisfaction Rate</div>
+                        <div class="text-blue-100 text-sm">Client Reviews</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2">3+</div>
+                        <div class="text-white font-bold text-lg mb-1">Years Experience</div>
+                        <div class="text-blue-100 text-sm">Industry Expertise</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Why Choose Us Section -->
     <section id="why-choose-us" class="py-24 bg-white">
         <div class="container mx-auto px-4 lg:px-8">
@@ -2186,9 +2259,7 @@
             observer.observe(card);
         });
 
-        // Console log for debugging
-        console.log('Nexora Website - All JavaScript loaded successfully!');
-        console.log('Features: Mobile Menu, Smooth Scroll, Form Validation, Scroll Animations');
+
     </script>
 </body>
 
