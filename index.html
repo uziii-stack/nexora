@@ -1086,6 +1086,112 @@
                 grid-template-columns: 1fr 380px;
             }
         }
+
+        /* ===== blog CSS START ===== */
+        .blog-section {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .blog-container {
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4169E1;
+            margin-bottom: 10px;
+        }
+
+        .blog-subtitle {
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 16px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .blog-card {
+            background: #f7f9ff;
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 20px;
+            transition: 0.3s ease;
+            border: 1px solid #e1e4fa;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-img img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .blog-headline {
+            color: #4169E1;
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        .blog-text {
+            font-size: 15px;
+            color: #444;
+            margin: 12px 0;
+            line-height: 1.5;
+        }
+
+        .blog-date {
+            display: block;
+            margin: 8px 0;
+            font-size: 14px;
+            color: gray;
+        }
+
+        .blog-btn {
+            background: #4169E1;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .blog-btn:hover {
+            background: #2d4fb3;
+        }
+
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-title {
+                font-size: 28px;
+            }
+        }
+
+        /* ===== blog CSS END ===== */
     </style>
 </head>
 
@@ -1872,6 +1978,57 @@
             </div>
         </div>
     </section>
+    <!-- BLOG SECTION START -->
+    <section class="blog-section">
+        <div class="blog-container">
+            <h2 class="blog-title">Our Blogs</h2>
+            <p class="blog-subtitle">Insights, updates, and expert knowledge from Nexora</p>
+
+            <div class="blog-grid">
+
+                <!-- Blog Card 1: Enterprise CRM -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="./blog_crm.jpg" alt="Enterprise CRM">
+                    </div>
+                    <h3 class="blog-headline">How Enterprise CRM Transforms Business Efficiency</h3>
+                    <p class="blog-text">
+                        Discover how AI-powered enterprise CRM solutions streamline workflows and boost performance.
+                    </p>
+                    <span class="blog-date">Jul 22, 2024</span>
+                    <button class="blog-btn">Read More</button>
+                </div>
+
+                <!-- Blog Card 2: AI Automation -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="blog_ai.jpg" alt="AI Automation">
+                    </div>
+                    <h3 class="blog-headline">AI Integration: The Future of Smart Automation</h3>
+                    <p class="blog-text">
+                        Learn how AI automation improves accuracy, reduces manual work, and modernizes operations.
+                    </p>
+                    <span class="blog-date">Aug 10, 2024</span>
+                    <button class="blog-btn">Read More</button>
+                </div>
+
+                <!-- Blog Card 3: Web Development -->
+                <div class="blog-card">
+                    <div class="blog-img">
+                        <img src="./blog_web_dev.jpg" alt="Web Development">
+                    </div>
+                    <h3 class="blog-headline">Building Scalable Web Applications in 2025</h3>
+                    <p class="blog-text">
+                        Explore modern frameworks and best practices for developing scalable web applications.
+                    </p>
+                    <span class="blog-date">Sep 02, 2024</span>
+                    <button class="blog-btn">Read More</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- BLOG SECTION END -->
 
     <!-- About Section -->
     <section id="about" class="py-24 bg-gray-50">
@@ -2259,6 +2416,13 @@
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
         });
+        // ===== blog JS START =====
+        document.querySelectorAll(".blog-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                alert("Blog details will be available soon!");
+            });
+        });
+        // ===== JS END =====
 
 
     </script>
