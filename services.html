@@ -102,9 +102,23 @@
     <!-- ======================================================
                      PAGE HEADER
     ======================================================= -->
-    <section class="w-full bg-[#0a0f1c] text-white py-20 text-center">
-        <h1 class="text-4xl font-bold mb-2">Services</h1>
-        <p class="text-lg opacity-80">Home > Services</p>
+    <section class="w-full relative py-24 text-center text-white overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 w-full h-full">
+            <img src="./servic-cover.jpg" alt="Services Header" class="w-full h-full object-cover">
+            <!-- Dark Overlay for better text visibility -->
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4">
+            <h1 class="text-4xl sm:text-5xl font-bold mb-3 tracking-tight">Services</h1>
+            <p
+                class="text-lg sm:text-xl text-gray-200 font-medium bg-white/10 inline-block px-4 py-1 rounded-full backdrop-blur-sm border border-white/20">
+                <a href="index.html">Home</a> <span class="mx-2 text-blue-400">></span> <a
+                    href="services.html">Services</a>
+            </p>
+        </div>
     </section>
 
     <!-- ======================================================
